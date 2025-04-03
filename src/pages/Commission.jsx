@@ -40,7 +40,7 @@ const Commission = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/withdrawal/withdrawals", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/withdrawal/withdrawals", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -97,7 +97,7 @@ const Commission = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/referral/generate", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/referral/generate", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -146,7 +146,7 @@ const Commission = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/referral/stats", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/referral/stats", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -209,7 +209,7 @@ const Commission = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/withdrawal/check-balance", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/withdrawal/check-balance", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -297,7 +297,7 @@ const Commission = () => {
     ]);
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/withdrawal/request", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/withdrawal/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

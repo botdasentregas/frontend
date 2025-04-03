@@ -15,7 +15,7 @@ const Index = () => {
         <CardContent className="p-4 sm:p-6">
           <div className="text-center space-y-4">
             <p className="text-muted-foreground text-sm sm:text-base">
-              Comece a usar o Windsurf para otimizar suas entregas e melhorar sua experiência.
+              Comece a usar o bot das entregas  para otimizar suas entregas e melhorar sua experiência.
             </p>
           </div>
         </CardContent>

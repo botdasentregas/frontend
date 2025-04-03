@@ -38,7 +38,7 @@ const Payment = () => {
         throw new Error("Usuário não autenticado. Faça login novamente.");
       }
 
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/referral/verify", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/referral/verify", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -88,7 +88,7 @@ const Payment = () => {
         throw new Error("Usuário não autenticado. Faça login novamente.");
       }
 
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/payments/create-payment", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/payments/create-payment", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,

@@ -45,7 +45,7 @@ const Connect = () => {
 
   useEffect(() => {
     // Inicializar socket apenas uma vez
-    const newSocket = io("http://botdasentregas.hopto.org:8221/", { 
+    const newSocket = io("https://alive-kind-jennet.ngrok-free.app/", { 
       transports: ["websocket"]
     });
 
@@ -166,7 +166,7 @@ const Connect = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/start", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/start", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -228,7 +228,7 @@ const Connect = () => {
     }
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/session", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/session", {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -247,7 +247,7 @@ const Connect = () => {
         // Força uma limpeza do socket para garantir que não haja estados residuais
         if (socket) {
           socket.disconnect();
-          const newSocket = io("http://botdasentregas.hopto.org:8221/", { 
+          const newSocket = io("https://alive-kind-jennet.ngrok-free.app/", { 
             transports: ["websocket"]
           });
           setSocket(newSocket);

@@ -7,7 +7,7 @@ import { toast } from "@/hooks/use-toast";
 import { Power, MessageSquare, Plus, Check, Users, RefreshCw } from "lucide-react";
 import io from "socket.io-client";
 
-const socket = io("http://botdasentregas.hopto.org:8221/");
+const socket = io("https://alive-kind-jennet.ngrok-free.app/");
 
 socket.on("connect", () => {
   console.log("Socket conectado com sucesso!");
@@ -50,7 +50,7 @@ const Assistant = () => {
 
     try {
       const endpoint = isActive ? "deactivate" : "activate";
-      const response = await fetch(`http://botdasentregas.hopto.org:8221/api/bot/${endpoint}`, {
+      const response = await fetch(`https://alive-kind-jennet.ngrok-free.app/api/bot/${endpoint}`, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -113,7 +113,7 @@ const Assistant = () => {
       const payload = JSON.parse(atob(tokenParts[1]));
       const userId = payload.id;
 
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/responses", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/responses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const Assistant = () => {
     }
   
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/groups/toggle-response", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/groups/toggle-response", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -233,7 +233,7 @@ const Assistant = () => {
     }
   
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/groups/list", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/groups/list", {
         headers: {
           "Authorization": `Bearer ${token}`,
         },
@@ -297,7 +297,7 @@ const Assistant = () => {
       }
 
       try {
-        const response = await fetch("http://botdasentregas.hopto.org:8221/api/bot/bot-status", {
+        const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/bot-status", {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${token}`,

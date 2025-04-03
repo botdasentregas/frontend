@@ -23,7 +23,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://botdasentregas.hopto.org:8221/api/auth/login", {
+      const response = await fetch("https://alive-kind-jennet.ngrok-free.app/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Login = () => {
         });
 
         // Verificar status de pagamento
-        const paymentResponse = await fetch("http://botdasentregas.hopto.org:8221/api/bot/check-payment-status", {
+        const paymentResponse = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/check-payment-status", {
           headers: {
             "Authorization": `Bearer ${data.token}`,
             "Content-Type": "application/json"
@@ -54,7 +54,7 @@ const Login = () => {
           // Redirecionar baseado no status de pagamento
           if (paymentData.paymentStatus === "paid") {
             // Verificar status do bot
-            const botStatusResponse = await fetch("http://botdasentregas.hopto.org:8221/api/bot/status", {
+            const botStatusResponse = await fetch("https://alive-kind-jennet.ngrok-free.app/api/bot/status", {
               headers: {
                 "Authorization": `Bearer ${data.token}`,
                 "Content-Type": "application/json"

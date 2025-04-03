@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     sourcemap: mode === 'development',
     minify: mode === 'production',
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {
