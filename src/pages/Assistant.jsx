@@ -7,7 +7,13 @@ import { toast } from "@/hooks/use-toast";
 import { Power, MessageSquare, Plus, Check, Users, RefreshCw } from "lucide-react";
 import io from "socket.io-client";
 
-const socket = io("https://alive-kind-jennet.ngrok-free.app/");
+const socket = io("https://alive-kind-jennet.ngrok-free.app/", {
+  transports: ["websocket"],
+  reconnection: true,
+  reconnectionAttempts: 5,
+  reconnectionDelay: 1000,
+  timeout: 20000
+});
 
 socket.on("connect", () => {
   console.log("Socket conectado com sucesso!");
@@ -15,6 +21,10 @@ socket.on("connect", () => {
 
 socket.on("disconnect", () => {
   console.log("Socket desconectado!");
+});
+
+socket.on("connect_error", (error) => {
+  console.error("Erro na conexão do socket:", error);
 });
 
 // Log de todos os eventos

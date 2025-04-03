@@ -46,28 +46,31 @@ const Connect = () => {
   useEffect(() => {
     // Inicializar socket apenas uma vez
     const newSocket = io("https://alive-kind-jennet.ngrok-free.app/", { 
-      transports: ["websocket"]
+      transports: ["websocket"],
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      timeout: 20000
     });
 
-    // Configurar listeners do socket
     newSocket.on("connect", () => {
-      const userId = getUserIdFromToken();
-      if (userId) {
-        newSocket.emit("register", { userId });
-      }
+      console.log("Socket conectado com sucesso!");
+    });
+
+    newSocket.on("disconnect", () => {
+      console.log("Socket desconectado!");
     });
 
     newSocket.on("connect_error", (error) => {
-      console.error("Erro na conexão WebSocket:", error);
+      console.error("Erro na conexão do socket:", error);
     });
 
     setSocket(newSocket);
 
-    // Limpar socket ao desmontar
     return () => {
       newSocket.disconnect();
     };
-  }, []); // Executar apenas uma vez ao montar o componente
+  }, []);
 
   useEffect(() => {
     if (!socket) return;

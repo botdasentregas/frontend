@@ -21,7 +21,14 @@
     {
       "src": "/assets/(.*\\.js)",
       "headers": {
-        "Content-Type": "application/javascript",
+        "Content-Type": "text/javascript",
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*\\.mjs)",
+      "headers": {
+        "Content-Type": "text/javascript",
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
