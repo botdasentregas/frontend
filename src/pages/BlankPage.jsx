@@ -37,7 +37,7 @@ const BlankPage = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/withdrawal/admin/withdrawals", {
+      const response = await fetch("http://botdasentregas.hopto.org:8221/api/withdrawal/admin/withdrawals", {
         headers: {
           "x-api-key": apiKey,
         },
@@ -92,7 +92,7 @@ const BlankPage = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/withdrawal/admin/withdrawal/${withdrawalId}`, {
+      const response = await fetch(`http://botdasentregas.hopto.org:8221/api/withdrawal/admin/withdrawal/${withdrawalId}`, {
         method: "PUT",
         headers: {
           "x-api-key": apiKey,
@@ -161,7 +161,7 @@ const BlankPage = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/withdrawal/admin/withdrawal/${withdrawalId}`, {
+      const response = await fetch(`http://botdasentregas.hopto.org:8221/api/withdrawal/admin/withdrawal/${withdrawalId}`, {
         method: "PUT",
         headers: {
           "x-api-key": apiKey,
